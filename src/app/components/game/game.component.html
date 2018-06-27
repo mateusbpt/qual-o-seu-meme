@@ -1,0 +1,11 @@
+<div *ngIf="!isFinished">{{ question }}</div>
+<div *ngIf="isFirst && !isFinished">
+  <button type="button" (click)="first(true)">Like</button>
+  <button type="button" (click)="first(false)">Not like</button>
+</div>
+<div *ngIf="!isFirst && !isFinished">
+  <button type="button" (click)="next(true)">Like</button>
+  <button type="button" (click)="next(false)">Not like</button>
+</div>
+<div>{{ memes | json }}</div>
+<div *ngIf="isFinished">{{ finalMessage }}</div>
